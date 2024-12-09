@@ -15,10 +15,10 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   register(user: User): Observable<UserResponseDTO>{
-    return this.http.post<UserResponseDTO>(this.baseUrl+"/register",user);
+    return this.http.post<UserResponseDTO>(`${this.baseUrl}/register`,user);
   }
 
   login(AuthRequest: AuthRequestDTO): Observable<AuthResponseDTO>{
-    return this.http.post<AuthResponseDTO>(this.baseUrl+"/login", AuthRequest)
+    return this.http.post<AuthResponseDTO>(`${this.baseUrl}/login`, AuthRequest)
   }
 }
