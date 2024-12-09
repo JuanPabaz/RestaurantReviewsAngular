@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UserResponseDTO } from './models/user-response-dto.models';
 import { AuthResponseDTO } from './models/auth-response-dto.models';
 import { AuthRequestDTO } from './models/auth-request-dto.models';
+import { RegisterRequestDTO } from './models/register-request-dto.models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class AuthService {
   
   constructor(private http:HttpClient) { }
 
-  register(user: User): Observable<UserResponseDTO>{
-    return this.http.post<UserResponseDTO>(`${this.baseUrl}/register`,user);
+  register(registerRequest: RegisterRequestDTO): Observable<UserResponseDTO>{
+    return this.http.post<UserResponseDTO>(`${this.baseUrl}/register`,registerRequest);
   }
 
   login(AuthRequest: AuthRequestDTO): Observable<AuthResponseDTO>{
