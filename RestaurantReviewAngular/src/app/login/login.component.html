@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+        <form (ngSubmit)="login()" method="post" class="mb-0 space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    Correo Electronico
+                </label>
+                <div class="mt-1">
+                    <input [(ngModel)] = "authRequest.username" type="email" name="email" id="email" autocomplete="email" required 
+                    class="w-full border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring.indigo-500">
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">
+                    Contraseña
+                </label>
+                <div class="mt-1">
+                    <input [(ngModel)] = "authRequest.password" type="password" name="password" id="password" required
+                    class="w-full border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring.indigo-500">
+                </div>
+            </div>
+            <div>
+                <button
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 
+                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                (click)="login()" 
+                type="submit">
+                    Iniciar sesion
+                </button>
+            </div>
+            <div>
+                <a href="register" class="underline text-indigo-600 flex justify-end">No tienes cuenta? Registrate</a>
+            </div>
+        </form>
+    </div>
+</div>
