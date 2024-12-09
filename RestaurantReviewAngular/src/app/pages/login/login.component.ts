@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthRequestDTO } from '../models/auth-request-dto.models';
-import { AuthService } from '../auth.service';
-import { AuthResponseDTO } from '../models/auth-response-dto.models';
-import { Role } from '../models/user.models';
+import { AuthRequestDTO } from '../../models/auth-request-dto.models';
+import { AuthService } from '../../auth.service';
+import { AuthResponseDTO } from '../../models/auth-response-dto.models';
+import { Role } from '../../models/user.models';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
