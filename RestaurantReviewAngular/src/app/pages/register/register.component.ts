@@ -3,8 +3,8 @@ import { Role, User } from '../../models/user.models';
 import { RegisterRequestDTO } from '../../models/register-request-dto.models';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../auth.service';
 import { UserResponseDTO } from '../../models/user-response-dto.models';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
