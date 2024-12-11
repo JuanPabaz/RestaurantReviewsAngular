@@ -5,6 +5,7 @@ import { Role } from '../../models/user.models';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,16 +24,18 @@ export class LoginComponent {
     role: Role.NONE
   }
 
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService,
+    private router: Router
+  ){
 
   }
 
   login(){
-    debugger
     this.authService.login(this.authRequest)
     .subscribe({
       next:(response) => {
         this.authResponse = response;
+        this.router.navigate(["/"])
       },
       error:(error) => {
         console.log("Error:" + error.error.message)
