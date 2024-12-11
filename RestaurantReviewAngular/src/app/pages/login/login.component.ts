@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
 import { AuthRequestDTO } from '../../models/auth-request-dto.models';
 import { AuthResponseDTO } from '../../models/auth-response-dto.models';
 import { Role } from '../../models/user.models';
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  isLoggedIn = signal(inject(TokenService).loggedIn);
   authRequest: AuthRequestDTO = {
     username: '',
     password: ''
@@ -24,16 +26,25 @@ export class LoginComponent {
     role: Role.NONE
   }
 
+
   constructor(private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ){
 
+  }
+
+
+  ngOnInit(){
+    this.isLoggedIn = signal(inject(TokenService).loggedIn);
   }
 
   login(){
     this.authService.login(this.authRequest)
     .subscribe({
       next:(response) => {
+        this.tokenService.token = response.accessToken as string;
+        this.tokenService.loggedIn = "true";
         this.authResponse = response;
         this.router.navigate(["/"])
       },

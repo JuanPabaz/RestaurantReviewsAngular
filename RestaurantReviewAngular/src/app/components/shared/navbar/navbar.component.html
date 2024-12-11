@@ -20,13 +20,23 @@
             </div>
         </div>
         <div>
-            <button
+            @if (isLoggedIn() !== "true") {
+                <button
+                    class="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-900
+                    hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    (click)="login()" 
+                    type="button">
+                    Iniciar sesión
+                </button>
+            }@else if(isLoggedIn() === "true") {
+                <button
                 class="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-900
                 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                (click)="login()" 
+                (click)="logOut()" 
                 type="button">
-                Iniciar sesión
-            </button>
+                    Cerrar sesion
+                </button>
+            }
         </div>
     </nav>
 </header>
