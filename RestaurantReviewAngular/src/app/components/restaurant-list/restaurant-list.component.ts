@@ -14,6 +14,8 @@ export class RestaurantListComponent {
   restaurantList: RestaurantResponseDTO[] = [];
   isModalOpen: boolean = false;
   selectedRestaurant: RestaurantResponseDTO | null = null;
+  isDetailsModalOpen = false;
+  currentImageIndex = 0;
 
   constructor(private restaurantService: RestaurantService){}
 
@@ -42,5 +44,29 @@ export class RestaurantListComponent {
   closeModal(): void {
     this.isModalOpen = false;
     this.selectedRestaurant = null;
+  }
+
+  openFullDetails(restaurante: any): void {
+    this.selectedRestaurant = restaurante;
+    this.currentImageIndex = 0;
+    this.isDetailsModalOpen = true;
+  }
+  
+  closeDetailsModal(): void {
+    this.isDetailsModalOpen = false;
+    this.selectedRestaurant = null;
+  }
+  
+  nextImage(): void {
+    if (this.selectedRestaurant?.images) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.selectedRestaurant.images.length;
+    }
+  }
+  
+  prevImage(): void {
+    if (this.selectedRestaurant?.images) {
+      this.currentImageIndex =
+        (this.currentImageIndex - 1 + this.selectedRestaurant.images.length) % this.selectedRestaurant.images.length;
+    }
   }
 }
