@@ -9,23 +9,24 @@ import { TokenService } from '../../../services/token.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isLoggedIn = signal(inject(TokenService).loggedIn);
-  constructor(private router: Router){
+  isLoggedIn = inject(TokenService).isLoggedIn();
 
+  constructor(private router: Router, private tokenService: TokenService) {}
+
+  ngOnChange(){
+    
   }
 
-  ngOnInit(){
-    this.isLoggedIn = signal(inject(TokenService).loggedIn);
-  }
-
-  login(){
+  login() {
+    debugger
     this.router.navigate(['/login']);
   }
 
-  logOut(){
+  logOut() {
     debugger
     localStorage.removeItem('token');
     localStorage.removeItem('isLoggedIn');
-    window.location.reload();
+    this.tokenService.loggedIn = 'false'; // Cambia el estado reactivo
+    this.router.navigate(['/']);
   }
 }

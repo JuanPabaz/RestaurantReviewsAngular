@@ -15,42 +15,34 @@ import { TokenService } from '../../services/token.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  isLoggedIn = signal(inject(TokenService).loggedIn);
   authRequest: AuthRequestDTO = {
     username: '',
     password: ''
   };
+
   authResponse: AuthResponseDTO = {
     accessToken: '',
     refreshToken: '',
     role: Role.NONE
-  }
+  };
 
-
-  constructor(private authService: AuthService,
+  constructor(
+    private authService: AuthService,
     private router: Router,
     private tokenService: TokenService
-  ){
+  ) {}
 
-  }
-
-
-  ngOnInit(){
-    this.isLoggedIn = signal(inject(TokenService).loggedIn);
-  }
-
-  login(){
-    this.authService.login(this.authRequest)
-    .subscribe({
-      next:(response) => {
+  login() {
+    this.authService.login(this.authRequest).subscribe({
+      next: (response) => {
         this.tokenService.token = response.accessToken as string;
-        this.tokenService.loggedIn = "true";
+        this.tokenService.loggedIn = 'true'; // Cambia el estado reactivo
         this.authResponse = response;
-        this.router.navigate(["/"])
+        this.router.navigate(['/']);
       },
-      error:(error) => {
-        console.log("Error:" + error.error.message)
+      error: (error) => {
+        console.log('Error:' + error.error.message);
       }
-    })
+    });
   }
 }

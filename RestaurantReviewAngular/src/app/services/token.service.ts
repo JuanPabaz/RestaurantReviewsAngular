@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
+  private _isLoggedIn = signal(this.loggedIn === 'true');
 
   set token(token: string) {
     localStorage.setItem('token', token);
@@ -13,11 +14,16 @@ export class TokenService {
     return localStorage.getItem('token') as string;
   }
 
-  set loggedIn(isLoggedIn:string) {
-    localStorage.setItem('isLoggedIn',isLoggedIn);
+  set loggedIn(isLoggedIn: string) {
+    localStorage.setItem('isLoggedIn', isLoggedIn);
+    this._isLoggedIn.set(isLoggedIn === 'true');
   }
 
   get loggedIn(): string {
     return localStorage.getItem('isLoggedIn') as string;
+  }
+
+  get isLoggedIn() {
+    return this._isLoggedIn;
   }
 }
