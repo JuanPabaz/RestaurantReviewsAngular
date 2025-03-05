@@ -1,0 +1,58 @@
+<input type="checkbox" id="cartToggle" class="hidden">
+
+<header class="w-full bg-white shadow-md p-4 fixed top-0 left-0 z-20">
+  <app-navbar></app-navbar>
+</header>
+
+<!-- Main Content (for spacing) -->
+<main class="mt-16 md:mt-20 p-4">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Welcome to Our Store</h1>
+    <p class="text-gray-700">Browse our collection of products...</p>
+  </div>
+</main>
+
+<!-- Bottom Mobile Navbar -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-md">
+  <div class="flex justify-around items-center p-2">
+    <a href="#" class="text-gray-700 hover:text-gray-900 flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18" />
+      </svg>
+      <span class="text-xs">Menu</span>
+    </a>
+    <a href="#" class="text-gray-700 hover:text-gray-900 flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5v14" />
+      </svg>
+      <span class="text-xs">Shop</span>
+    </a>
+    <a href="#" class="text-gray-700 hover:text-gray-900 flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+      <span class="text-xs">Account</span>
+    </a>
+    <label for="cartToggle" class="cursor-pointer text-gray-700 hover:text-gray-900 flex flex-col items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18m-7 6h7" />
+      </svg>
+      <span class="text-xs">Basket</span>
+    </label>
+  </div>
+</footer>
+
+<!-- Cart Drawer and Overlay -->
+<div id="cartOverlay" class="fixed inset-0 z-30 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"></div>
+
+<div id="cartDrawer" class="fixed top-0 right-0 h-full w-80 md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 p-4 md:max-w-xs">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-lg font-bold">Your Cart</h2>
+    <label for="cartToggle" class="cursor-pointer text-gray-500 hover:text-gray-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </label>
+  </div>
+  <p class="text-gray-700">Your cart is empty.</p>
+</div>
