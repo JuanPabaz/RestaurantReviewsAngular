@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RestaurantResponse } from '../../interfaces/restaurant-response';
+import { Pageable } from '../../interfaces/pageable';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class RestaurantService {
 
   constructor(private http:HttpClient) { }
 
-  getAllRestaurants():Observable<RestaurantResponse[]>{
-    return this.http.get<RestaurantResponse[]>(`${this.baseUrl}/restaurant`);
+  getAllRestaurants(page:number):Observable<Pageable<RestaurantResponse[]>>{
+    return this.http.get<Pageable<RestaurantResponse[]>>(`${this.baseUrl}/restaurant?page=${page}`);
   }
 
   
