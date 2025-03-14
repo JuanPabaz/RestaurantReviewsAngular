@@ -1,5 +1,5 @@
 .navbar-container {
-    max-width: 80rem; /* Equivalente a max-w-7xl */
+    max-width: 80%; /* Equivalente a max-w-7xl */
     margin: 0 auto; /* mx-auto */
     display: flex;
     align-items: center;
