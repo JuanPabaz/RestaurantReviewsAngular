@@ -14,33 +14,43 @@ import { PageableComponent } from '../../../shared/components/pageable/pageable.
 export default class RestaurantListComponent implements OnInit{
   restaurantList: RestaurantResponse[] = [];
   restaurantListPageable!: Pageable<RestaurantResponse[]>;
+  emptyRestaurant: RestaurantResponse = {
+    idRestaurant: 0,
+    restuarantName: '',
+    address: '',
+    phoneNumber: '',
+    idCategory: 0,
+    pageLink: '',
+    images: [],
+  }
 
   constructor(private _restaurant_service: RestaurantService){
 
   }
 
   ngOnInit(): void {
-    this._restaurant_service.getAllRestaurants(1).subscribe({
-      next: restaurant => {
-        this.restaurantListPageable = restaurant;
-        this.restaurantList = restaurant.content;
-      },
-      error: err => {
-        console.log(err.error);
-      }
-    })
+    this.getAllRestaurants(1);
   }
 
-  changePage(page:number){
+  getAllRestaurants(page: number){
     this._restaurant_service.getAllRestaurants(page).subscribe({
       next: restaurant => {
         this.restaurantListPageable = restaurant;
         this.restaurantList = restaurant.content;
+        if (this.restaurantList.length < 6){
+          for (let i = this.restaurantList.length; i < 6; i++){
+            this.restaurantList.push(this.emptyRestaurant);
+          }
+        }
       },
       error: err => {
         console.log(err.error);
       }
-    })
+    });
+  }
+
+  changePage(page:number){
+    this.getAllRestaurants(page);
   }
 
 
