@@ -1,26 +1,30 @@
-<div class="restaurant-grid">
-    <!-- Iteración de restaurantes en Angular/JS -->
-    @for (restaurant of restaurantList; track $index) {
-        @if (restaurant.idRestaurant != 0) {
-            <div class="restaurant-card">
-                <p class="restaurant-name">{{restaurant.restuarantName}}</p>
-                <app-carousel [carouselImages]="restaurant.images"></app-carousel>
-                <form class="restaurant-form">
-                    <label for="email">{{restaurant.address}}</label>
-                    <label for="password">{{restaurant.pageLink}}</label>
-                </form>
-            </div>
-        }@else if(restaurant.idRestaurant === 0){
-            <div class="restaurant-card skeleton">
-                <p class="restaurant-name skeleton-text"></p>
-                <div class="carousel-skeleton"></div>
-                <form class="restaurant-form">
-                    <label class="skeleton-text"></label>
-                    <label class="skeleton-text"></label>
-                </form>
-            </div>
+<div class="container">
+    <div class="restaurant-grid">
+        <!-- Iteración de restaurantes en Angular/JS -->
+        @for (restaurant of restaurantList; track $index) {
+            @if (restaurant.idRestaurant != 0) {
+                <div class="restaurant-card">
+                    <p class="restaurant-name">{{restaurant.restuarantName}}</p>
+                    <app-carousel [carouselImages]="restaurant.images"></app-carousel>
+                    <form class="restaurant-form">
+                        <label for="email">{{restaurant.address}}</label>
+                        <label for="password">{{restaurant.pageLink}}</label>
+                    </form>
+                </div>
+            }@else if(restaurant.idRestaurant === 0){
+                <div class="restaurant-card skeleton">
+                    <p class="restaurant-name skeleton-text"></p>
+                    <div class="carousel-skeleton"></div>
+                    <form class="restaurant-form">
+                        <label class="skeleton-text"></label>
+                        <label class="skeleton-text"></label>
+                    </form>
+                </div>
+            }
         }
-    }
+    </div>
+    <div style="margin-top: 10px;">
+        <app-pageable [page]="restaurantListPageable"
+        (changePageEventEmitter)="changePage($event)"/>
+    </div>
 </div>
-<app-pageable [page]="restaurantListPageable"
-(changePageEventEmitter)="changePage($event)"/>
