@@ -3,18 +3,11 @@
     @for (restaurant of restaurantList; track $index) {
         <div class="restaurant-card">
             <p class="restaurant-name">{{restaurant.restuarantName}}</p>
+            <app-carousel [carouselImages]="restaurant.images"></app-carousel>
             <form class="restaurant-form">
                 <label for="email">{{restaurant.address}}</label>
-                <input id="email" placeholder="mail@example.com" name="email" />
-
                 <label for="password">{{restaurant.pageLink}}</label>
-                <input type="password" id="password" placeholder="password" name="password" />
-
-                <button>Login</button>
             </form>
-            <div class="restaurant-footer">
-                No account? <a href="/signup">Create one</a>
-            </div>
         </div>
     }
 </div>

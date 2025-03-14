@@ -5,7 +5,7 @@ import { CarouselComponent } from '../../../shared/components/carousel/carousel.
 
 @Component({
   selector: 'app-restaurant-list',
-  imports: [],
+  imports: [CarouselComponent],
   templateUrl: './restaurant-list.component.html',
   styleUrl: './restaurant-list.component.css'
 })
