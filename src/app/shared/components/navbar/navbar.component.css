@@ -1,0 +1,76 @@
+.navbar-container {
+    max-width: 80rem; /* Equivalente a max-w-7xl */
+    margin: 0 auto; /* mx-auto */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Desktop Navigation */
+.navbar-desktop {
+    display: none; /* Oculto por defecto, visible en pantallas más grandes */
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: bold;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 1rem; /* space-x-4 */
+}
+
+.navbar-menu a, .navbar-auth a {
+    color: #4B5563; /* text-gray-700 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover, .navbar-auth a:hover {
+    color: #1F2937; /* hover:text-gray-900 */
+}
+
+.navbar-auth {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Mobile View */
+.navbar-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-mobile button {
+    color: #4B5563;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-mobile button:hover {
+    color: #1F2937;
+}
+
+.navbar-mobile svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) { /* md:flex */
+    .navbar-desktop {
+        display: flex;
+    }
+
+    .navbar-mobile {
+        display: none;
+    }
+}

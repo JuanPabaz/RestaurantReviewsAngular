@@ -1,30 +1,29 @@
-<input type="checkbox" id="cartToggle" class="hidden">
+<input type="checkbox" id="cartToggle">
 
-<header class="w-full bg-white shadow-md p-4 fixed top-0 left-0 z-20">
-  <app-navbar/>
+<header class="header">
+    <app-navbar></app-navbar>
 </header>
 
-<main class="mt-16 md:mt-15 px-20 py-4 flex justify-center">
-    <router-outlet/>
+<main class="main">
+    <router-outlet></router-outlet>
 </main>
 
-
 <!-- Bottom Mobile Navbar -->
-<footer class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t shadow-md">
-    <app-footer/>
+<footer class="footer">
+    <app-footer></app-footer>
 </footer>
 
 <!-- Cart Drawer and Overlay -->
-<div id="cartOverlay" class="fixed inset-0 z-30 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out"></div>
+<div id="cartOverlay"></div>
 
-<div id="cartDrawer" class="fixed top-0 right-0 h-full w-80 md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 p-4 md:max-w-xs">
-  <div class="flex items-center justify-between mb-4">
-    <h2 class="text-lg font-bold">Your Cart</h2>
-    <label for="cartToggle" class="cursor-pointer text-gray-500 hover:text-gray-700">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </label>
-  </div>
-  <p class="text-gray-700">Your cart is empty.</p>
+<div id="cartDrawer">
+    <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <label for="cartToggle" class="cart-close">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </label>
+    </div>
+    <p class="cart-empty">Your cart is empty.</p>
 </div>
