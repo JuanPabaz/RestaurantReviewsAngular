@@ -1,6 +1,7 @@
-<div style="display: flex; justify-content: center;">
+<div class="pageable-container">
     @for (page of totalPages; track $index) {
-        <button (click)="changePage(page)">{{page}}</button>
+        <button class="page-button" 
+        (click)="changePage(page)">{{page}}</button>
     }
 </div>
 
