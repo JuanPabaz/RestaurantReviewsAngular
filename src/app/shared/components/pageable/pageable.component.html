@@ -1,0 +1,6 @@
+<div style="display: flex; justify-content: center;">
+    @for (page of totalPages; track $index) {
+        <button (click)="changePage(page)">{{page}}</button>
+    }
+</div>
+
