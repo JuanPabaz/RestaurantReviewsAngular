@@ -1,71 +1,20 @@
-<div class="grid auto-rows-auto xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-    <div class="row-span-1 md:row-span-2 min-w-[200px] rounded-md p-4 bg-white shadow-md">
-        <p class="text-xl font-semibold">Restaurante 1</p>
-        <form class="w-full mt-4 space-y-3">
-            <label class="text-sm font-medium" for="email">Email</label>
-            <input class="border rounded-md w-full px-3 py-2 text-sm" id="email" placeholder="mail@example.com" name="email" />
-            
-            <label class="text-sm font-medium" for="password">Password</label>
-            <input type="password" class="border rounded-md w-full px-3 py-2 text-sm" id="password" placeholder="password" name="password" />
-            
-            <button class="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-black/90">Login</button>
-        </form>
-        <div class="text-center mt-4">No account? <a class="text-blue-500" href="/signup">Create one</a></div>
-    </div>
+<div class="restaurant-grid">
+    <!-- Iteración de restaurantes en Angular/JS -->
+    @for (restaurant of restaurantList; track $index) {
+        <div class="restaurant-card">
+            <p class="restaurant-name">{{restaurant.restuarantName}}</p>
+            <form class="restaurant-form">
+                <label for="email">{{restaurant.address}}</label>
+                <input id="email" placeholder="mail@example.com" name="email" />
 
-    <div class="row-span-1 md:row-span-2 min-w-[200px] rounded-md p-4 bg-white shadow-md">
-        <p class="text-xl font-semibold">Restaurante 2</p>
-        <form class="w-full mt-4 space-y-3">
-            <label class="text-sm font-medium" for="email">Email</label>
-            <input class="border rounded-md w-full px-3 py-2 text-sm" id="email" placeholder="mail@example.com" name="email" />
-            
-            <label class="text-sm font-medium" for="password">Password</label>
-            <input type="password" class="border rounded-md w-full px-3 py-2 text-sm" id="password" placeholder="password" name="password" />
-            
-            <button class="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-black/90">Login</button>
-        </form>
-        <div class="text-center mt-4">No account? <a class="text-blue-500" href="/signup">Create one</a></div>
-    </div>
+                <label for="password">{{restaurant.pageLink}}</label>
+                <input type="password" id="password" placeholder="password" name="password" />
 
-    <div class="row-span-1 md:row-span-2 min-w-[200px] rounded-md p-4 bg-white shadow-md">
-        <p class="text-xl font-semibold">Restaurante 3</p>
-        <form class="w-full mt-4 space-y-3">
-            <label class="text-sm font-medium" for="email">Email</label>
-            <input class="border rounded-md w-full px-3 py-2 text-sm" id="email" placeholder="mail@example.com" name="email" />
-            
-            <label class="text-sm font-medium" for="password">Password</label>
-            <input type="password" class="border rounded-md w-full px-3 py-2 text-sm" id="password" placeholder="password" name="password" />
-            
-            <button class="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-black/90">Login</button>
-        </form>
-        <div class="text-center mt-4">No account? <a class="text-blue-500" href="/signup">Create one</a></div>
-    </div>
-
-    <div class="row-span-1 md:row-span-2 min-w-[200px] rounded-md p-4 bg-white shadow-md">
-        <p class="text-xl font-semibold">Restaurante 4</p>
-        <form class="w-full mt-4 space-y-3">
-            <label class="text-sm font-medium" for="email">Email</label>
-            <input class="border rounded-md w-full px-3 py-2 text-sm" id="email" placeholder="mail@example.com" name="email" />
-            
-            <label class="text-sm font-medium" for="password">Password</label>
-            <input type="password" class="border rounded-md w-full px-3 py-2 text-sm" id="password" placeholder="password" name="password" />
-            
-            <button class="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-black/90">Login</button>
-        </form>
-        <div class="text-center mt-4">No account? <a class="text-blue-500" href="/signup">Create one</a></div>
-    </div>
-
-    <div class="row-span-1 md:row-span-2 min-w-[200px] rounded-md p-4 bg-white shadow-md">
-        <p class="text-xl font-semibold">Restaurante 4</p>
-        <form class="w-full mt-4 space-y-3">
-            <label class="text-sm font-medium" for="email">Email</label>
-            <input class="border rounded-md w-full px-3 py-2 text-sm" id="email" placeholder="mail@example.com" name="email" />
-            
-            <label class="text-sm font-medium" for="password">Password</label>
-            <input type="password" class="border rounded-md w-full px-3 py-2 text-sm" id="password" placeholder="password" name="password" />
-            
-            <button class="bg-black text-white px-4 py-2 rounded-md w-full hover:bg-black/90">Login</button>
-        </form>
-        <div class="text-center mt-4">No account? <a class="text-blue-500" href="/signup">Create one</a></div>
-    </div>
+                <button>Login</button>
+            </form>
+            <div class="restaurant-footer">
+                No account? <a href="/signup">Create one</a>
+            </div>
+        </div>
+    }
 </div>
