@@ -14,7 +14,8 @@ export class AuthService {
   private _user: any = {
     isAuth: false, 
     username: undefined,
-    role: undefined
+    role: undefined,
+    userId: undefined
   }
 
   constructor(private http: HttpClient) { }
