@@ -4,8 +4,8 @@
       <div class="navbar-logo">RR</div>
       <nav class="navbar-menu">
           <a href="#">Inicio</a>
-          <a href="#">Reseñas</a>
-          <a href="#">Restaurantes</a>
+          <a [routerLink]="['/create-review']">Reseñas</a>
+          <a [routerLink]="['/restaurant-list']">Restaurantes</a>
       </nav>
       <div class="navbar-auth">
         @if (user.isAuth) {
