@@ -8,7 +8,11 @@
           <a href="#">Restaurantes</a>
       </nav>
       <div class="navbar-auth">
-          <a routerLink="/login">Iniciar sesión</a>
+        @if (user.isAuth) {
+            <a (click)="logoutHandler()">Cerrar sesión</a>
+        }@else {
+            <a routerLink="/login">Iniciar sesión</a>
+        }
       </div>
   </div>
 
