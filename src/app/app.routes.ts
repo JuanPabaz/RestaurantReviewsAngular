@@ -14,6 +14,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./business/restaurant/restaurant-list/restaurant-list.component')
             },
             {
+                path:'create-review',
+                loadComponent: () => import('./business/create-review/create-review.component')
+            },
+            {
                 path: '',
                 redirectTo: 'restaurant-list',
                 pathMatch: 'full'
