@@ -1,1 +1,37 @@
-<p>create-review works!</p>
+<form (ngSubmit)="onSubmit(reviewForm)" #reviewForm="ngForm">
+    <div class="input-container">
+        <label for="">Lugar</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.place"
+        name="place">
+        <label for="">Comida</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.food"
+        name="food">
+        <label for="">Servicio</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.service"
+        name="service">
+        <label for="">Bebidas</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.drinks"
+        name="drinks">
+        <label for="">Música</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.music"
+        name="music">
+        <label for="">Menú</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.menu"
+        name="menu">
+        <label for="">Tiempo de espera</label>
+        <input type="number" 
+        [(ngModel)]="reviewRequest.waitingTime"
+        name="waitingTime">
+        <label for="">Comentarios</label>
+        <input type="text" 
+        [(ngModel)]="reviewRequest.comments"
+        name="comments">
+    </div>
+    <button type="submit">Crear reseña</button>
+</form>
