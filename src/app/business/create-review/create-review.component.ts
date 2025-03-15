@@ -2,14 +2,16 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ReviewsService } from '../../shared/services/reviews.service';
 import { ReviewRequest } from '../../interfaces/review-request';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-review',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './create-review.component.html',
   styleUrl: './create-review.component.css'
 })
 export default class CreateReviewComponent {
+  stars = [1, 2, 3, 4, 5];
   reviewRequest: ReviewRequest = {
     place: -1,
     food: -1,
