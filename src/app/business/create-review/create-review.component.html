@@ -1,37 +1,61 @@
 <form (ngSubmit)="onSubmit(reviewForm)" #reviewForm="ngForm">
     <div class="input-container">
         <label for="">Lugar</label>
-        <input type="number" 
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.place" name="place" [value]="5 - i" id="place-{{5 - i}}">
+                <label for="place-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
+        <!-- <input type="number" 
         [(ngModel)]="reviewRequest.place"
-        name="place">
+        name="place"> -->
         <label for="">Comida</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.food"
-        name="food">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.food" name="food" [value]="5 - i" id="food-{{5 - i}}">
+                <label for="food-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Servicio</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.service"
-        name="service">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.service" name="service" [value]="5 - i" id="service-{{5 - i}}">
+                <label for="service-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Bebidas</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.drinks"
-        name="drinks">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.drinks" name="drinks" [value]="5 - i" id="drinks-{{5 - i}}">
+                <label for="drinks-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Música</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.music"
-        name="music">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.music" name="music" [value]="5 - i" id="music-{{5 - i}}">
+                <label for="music-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Menú</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.menu"
-        name="menu">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.menu" name="menu" [value]="5 - i" id="menu-{{5 - i}}">
+                <label for="menu-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Tiempo de espera</label>
-        <input type="number" 
-        [(ngModel)]="reviewRequest.waitingTime"
-        name="waitingTime">
+        <div class="star-rating">
+            <ng-container *ngFor="let star of stars; let i = index">
+                <input type="radio" [(ngModel)]="reviewRequest.waitingTime" name="waitingTime" [value]="5 - i" id="waitingTime-{{5 - i}}">
+                <label for="waitingTime-{{5 - i}}">★</label>
+            </ng-container>
+        </div>
         <label for="">Comentarios</label>
         <input type="text" 
         [(ngModel)]="reviewRequest.comments"
         name="comments">
     </div>
-    <button type="submit">Crear reseña</button>
+    <button class="create-rewiew-button" type="submit">Crear reseña</button>
 </form>
