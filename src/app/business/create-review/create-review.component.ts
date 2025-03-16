@@ -13,7 +13,10 @@ import { Router } from '@angular/router';
   styleUrl: './create-review.component.css'
 })
 export default class CreateReviewComponent {
+  url:string | ArrayBuffer | null = ''; 
   stars = [1, 2, 3, 4, 5];
+  imagePreviews: string[] = [];
+  selectedFiles: File[] = [];
   selectedRestaurant: RestaurantResponse = {
     idRestaurant: 0,
     restuarantName: '',
@@ -31,6 +34,7 @@ export default class CreateReviewComponent {
     music: -1,
     menu: -1,
     waitingTime: -1,
+    ambient: -1,
     comments: '',
     idRestaurant: 0,
     idUser: 0,
@@ -58,5 +62,25 @@ export default class CreateReviewComponent {
         console.log(err.error);
       }
     })
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files) {
+      Array.from(input.files).forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          this.imagePreviews.push(reader.result as string); // Almacena la previsualización
+        };
+        reader.readAsDataURL(file);
+        this.selectedFiles.push(file); // Almacena los archivos
+      });
+    }
+  }
+
+  // Elimina una imagen antes de enviarla
+  removeImage(index: number) {
+    this.imagePreviews.splice(index, 1);
+    this.selectedFiles.splice(index, 1);
   }
 }
