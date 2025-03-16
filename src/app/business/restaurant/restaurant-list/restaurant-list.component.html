@@ -10,6 +10,12 @@
                         <label for="email">{{restaurant.address}}</label>
                         <label for="password">{{restaurant.pageLink}}</label>
                     </form>
+                    <div class="button-container">
+                        <button class="create-review-button"
+                        [routerLink]="['/create-review']"
+                        [state]="{restaurant}">Reseñar</button>
+                        <button class="see-more-button">Ver mas</button>
+                    </div>
                 </div>
             }@else if(restaurant.idRestaurant === 0){
                 <div class="restaurant-card skeleton">
