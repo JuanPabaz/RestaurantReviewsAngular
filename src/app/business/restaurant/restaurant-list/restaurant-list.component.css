@@ -98,3 +98,42 @@
 .restaurant-footer a:hover {
     text-decoration: underline;
 }
+
+.button-container{
+    display: flex;
+    gap: 5px;
+}
+
+.create-review-button {
+    width: 50%;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.see-more-button {
+    width: 50%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-more-button:hover {
+    background-color: rgba(232, 232, 232, 0.9);
+}
