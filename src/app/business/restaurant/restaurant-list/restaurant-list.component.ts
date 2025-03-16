@@ -4,10 +4,11 @@ import { RestaurantResponse } from '../../../interfaces/restaurant-response';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 import { Pageable } from '../../../interfaces/pageable';
 import { PageableComponent } from '../../../shared/components/pageable/pageable.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-list',
-  imports: [CarouselComponent, PageableComponent],
+  imports: [CarouselComponent, PageableComponent, RouterLink],
   templateUrl: './restaurant-list.component.html',
   styleUrl: './restaurant-list.component.css'
 })
