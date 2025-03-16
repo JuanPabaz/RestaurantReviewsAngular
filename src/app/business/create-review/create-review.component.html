@@ -1,6 +1,11 @@
 <div class="container">
     <div class="review-box">
-        <h2>{{selectedRestaurant.restuarantName}}</h2>
+        @if (selectedRestaurant.idRestaurant === 0) {
+            <label for="">Buscar restaurante</label>
+            <input type="text">
+        }@else {
+            <h2>{{selectedRestaurant.restuarantName}}</h2>
+        }
         <form (ngSubmit)="onSubmit(reviewForm)" #reviewForm="ngForm">
             <div class="input-container">
                 <div class="peer-rating-container">
@@ -77,8 +82,8 @@
                         <label for="">Ambientación</label>
                         <div class="star-rating">
                             <ng-container *ngFor="let star of stars; let i = index">
-                                <input type="radio" [(ngModel)]="reviewRequest.waitingTime" name="waitingTime" [value]="5 - i" id="waitingTime-{{5 - i}}">
-                                <label for="waitingTime-{{5 - i}}">★</label>
+                                <input type="radio" [(ngModel)]="reviewRequest.ambient" name="ambient" [value]="5 - i" id="ambient-{{5 - i}}">
+                                <label for="ambient-{{5 - i}}">★</label>
                             </ng-container>
                         </div>
                     </div>
@@ -88,8 +93,18 @@
                     name="comments"
                     rows="5"
                     cols="50"
-                    style="resize: vertical; overflow-y: auto; width: 100%;">
+                    style="resize: vertical; overflow-y: auto; width: 100%; box-sizing: border-box;">
                 </textarea>
+                <div class="image-upload-container">
+                    <input type="file" id="imageInput" class="d-none" multiple (change)="onFileSelected($event)"/>
+                
+                    <div class="image-preview-container">
+                        <div *ngFor="let img of imagePreviews; let i = index" class="image-preview">
+                            <img [src]="img" alt="Imagen subida">
+                            <button type="button" (click)="removeImage(i)">X</button>
+                        </div>
+                    </div>
+                </div>                
             </div>
             <button class="create-rewiew-button" type="submit">Crear reseña</button>
         </form>
