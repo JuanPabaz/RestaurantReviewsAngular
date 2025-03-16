@@ -8,6 +8,7 @@ export interface ReviewRequest {
     music: number;
     menu: number;
     waitingTime: number;
+    ambient: number;
     comments: string;
     idRestaurant: number;
     idUser: number;
