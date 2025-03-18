@@ -53,8 +53,8 @@ export default class CreateReviewComponent {
     let reviewRequest = reviewForm.form.value;
     const userId = JSON.parse(sessionStorage.getItem('user')!).userId;
     const restaurantId = this.selectedRestaurant.idRestaurant;
-    reviewRequest = {...reviewRequest, idUser: userId, restaurantId}; 
-    this.review_service.createReview(reviewRequest).subscribe({
+    reviewRequest = {...reviewRequest, idUser: userId, idRestaurant: restaurantId};
+    this.review_service.createReview(reviewRequest, this.selectedFiles).subscribe({
       next: reviewResponse => {
         console.log(reviewResponse);
       },
