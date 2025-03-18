@@ -49,7 +49,6 @@ export default class CreateReviewComponent {
   }
 
   onSubmit(reviewForm:NgForm){
-    debugger
     let reviewRequest = reviewForm.form.value;
     const userId = JSON.parse(sessionStorage.getItem('user')!).userId;
     const restaurantId = this.selectedRestaurant.idRestaurant;

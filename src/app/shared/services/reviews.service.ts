@@ -13,7 +13,6 @@ export class ReviewsService {
   constructor(private http: HttpClient) { }
 
   createReview(reviewRequest: ReviewRequest, images: File[]):Observable<ReviewResponse>{
-    debugger
     const formData = new FormData();
     formData.append('review', JSON.stringify(reviewRequest));
 
