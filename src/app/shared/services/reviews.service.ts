@@ -12,7 +12,16 @@ export class ReviewsService {
 
   constructor(private http: HttpClient) { }
 
-  createReview(reviewRequest: ReviewRequest):Observable<ReviewResponse>{
-    return this.http.post<ReviewResponse>(`${this.baseUrl}`,reviewRequest);
+  createReview(reviewRequest: ReviewRequest, images: File[]):Observable<ReviewResponse>{
+    debugger
+    const formData = new FormData();
+    formData.append('review', JSON.stringify(reviewRequest));
+
+    if (images && images.length > 0) {
+      images.forEach((image, index) => {
+        formData.append('images', image);
+      });
+    }
+    return this.http.post<ReviewResponse>(`${this.baseUrl}`,formData);
   }
 }
