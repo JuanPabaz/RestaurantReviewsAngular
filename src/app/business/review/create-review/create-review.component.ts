@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ReviewsService } from '../../shared/services/reviews.service';
-import { ReviewRequest } from '../../interfaces/review-request';
+import { ReviewsService } from '../../../shared/services/reviews.service';
+import { ReviewRequest } from '../../../interfaces/review-request';
 import { CommonModule } from '@angular/common';
-import { RestaurantResponse } from '../../interfaces/restaurant-response';
+import { RestaurantResponse } from '../../../interfaces/restaurant-response';
 import { Router } from '@angular/router';
 
 @Component({

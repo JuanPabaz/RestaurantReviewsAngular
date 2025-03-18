@@ -15,7 +15,7 @@ export const routes: Routes = [
             },
             {
                 path:'create-review',
-                loadComponent: () => import('./business/create-review/create-review.component')
+                loadComponent: () => import('./business/review/create-review/create-review.component')
             },
             {
                 path: '',
