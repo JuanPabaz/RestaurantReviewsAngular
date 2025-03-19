@@ -10,6 +10,7 @@ export interface ReviewResponse {
     menu: number
     waitingTime: number;
     ambient: number;
+    totalScore: number;
     comments: string;
     idRestaurant: number;
     idUser: number;
