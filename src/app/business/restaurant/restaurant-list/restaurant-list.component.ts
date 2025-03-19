@@ -4,17 +4,19 @@ import { RestaurantResponse } from '../../../interfaces/restaurant-response';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 import { Pageable } from '../../../interfaces/pageable';
 import { PageableComponent } from '../../../shared/components/pageable/pageable.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-restaurant-list',
-  imports: [CarouselComponent, PageableComponent, RouterLink],
+  imports: [CarouselComponent, PageableComponent],
   templateUrl: './restaurant-list.component.html',
   styleUrl: './restaurant-list.component.css'
 })
 export default class RestaurantListComponent implements OnInit{
   restaurantList: RestaurantResponse[] = [];
   restaurantListPageable!: Pageable<RestaurantResponse[]>;
+  isNotAuthModal = false;
   emptyRestaurant: RestaurantResponse = {
     idRestaurant: 0,
     restuarantName: '',
@@ -25,8 +27,15 @@ export default class RestaurantListComponent implements OnInit{
     images: [],
   }
 
-  constructor(private _restaurant_service: RestaurantService){
+  constructor(private _restaurant_service: RestaurantService,
+    private auth_service: AuthService,
+    private router: Router
+  ){
 
+  }
+
+  get user(){
+    return this.auth_service.user;
   }
 
   ngOnInit(): void {
@@ -54,5 +63,22 @@ export default class RestaurantListComponent implements OnInit{
     this.getAllRestaurants(page);
   }
 
+  validateCreateReview(restaurant: RestaurantResponse){
+    if (this.user.isAuth){
+      this.router.navigate(['/create-review'],{state:{restaurant}})
+    }else{
+      this.isNotAuthModal = true;
+    }
+  }
+
+  navigateToLogin() {
+    this.isNotAuthModal = false;
+    this.router.navigate(['/login']);
+  }
+
+  navigateToSignup() {
+    this.isNotAuthModal = false;
+    this.router.navigate(['/signup']);
+  }
 
 }

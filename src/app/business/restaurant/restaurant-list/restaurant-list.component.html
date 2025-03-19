@@ -1,6 +1,5 @@
 <div class="container">
     <div class="restaurant-grid">
-        <!-- Iteración de restaurantes en Angular/JS -->
         @for (restaurant of restaurantList; track $index) {
             @if (restaurant.idRestaurant != 0) {
                 <div class="restaurant-card">
@@ -12,8 +11,7 @@
                     </form>
                     <div class="button-container">
                         <button class="create-review-button"
-                        [routerLink]="['/create-review']"
-                        [state]="{restaurant}">Reseñar</button>
+                        (click)="validateCreateReview(restaurant)">Reseñar</button>
                         <button class="see-more-button">Ver mas</button>
                     </div>
                 </div>
@@ -34,3 +32,15 @@
         (changePageEventEmitter)="changePage($event)"/>
     </div>
 </div>
+@if (isNotAuthModal) {
+    <div class="modal-overlay">
+        <div class="modal">
+            <span class="close-modal" (click)="isNotAuthModal = false">&times;</span>
+            <h3>Para reseñar un restaurante, inicia sesión</h3>
+            <button class="create-review-button" (click)="navigateToLogin()">Iniciar sesión</button>
+            <div class="signup-link">
+                ¿No tienes cuenta? <a (click)="navigateToSignup()">Registrate</a>
+            </div>
+        </div>
+    </div>
+}
