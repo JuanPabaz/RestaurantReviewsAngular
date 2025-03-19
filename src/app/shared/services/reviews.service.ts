@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ReviewRequest } from '../../interfaces/review-request';
 import { Observable } from 'rxjs';
 import { ReviewResponse } from '../../interfaces/review-response';
+import { Pageable } from '../../interfaces/pageable';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class ReviewsService {
       });
     }
     return this.http.post<ReviewResponse>(`${this.baseUrl}`,formData);
+  }
+
+  getAllRestaurants(page: number):Observable<Pageable<ReviewResponse[]>>{
+    return this.http.get<Pageable<ReviewResponse[]>>(`${this.baseUrl}?page=${page}`);
   }
 }
