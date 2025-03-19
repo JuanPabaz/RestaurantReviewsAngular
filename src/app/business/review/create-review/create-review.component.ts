@@ -69,15 +69,14 @@ export default class CreateReviewComponent {
       Array.from(input.files).forEach((file) => {
         const reader = new FileReader();
         reader.onload = () => {
-          this.imagePreviews.push(reader.result as string); // Almacena la previsualización
+          this.imagePreviews.push(reader.result as string);
         };
         reader.readAsDataURL(file);
-        this.selectedFiles.push(file); // Almacena los archivos
+        this.selectedFiles.push(file);
       });
     }
   }
 
-  // Elimina una imagen antes de enviarla
   removeImage(index: number) {
     this.imagePreviews.splice(index, 1);
     this.selectedFiles.splice(index, 1);
