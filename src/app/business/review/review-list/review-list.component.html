@@ -1,1 +1,82 @@
-<p>review-list works!</p>
+<div class="container">
+    <div>
+        <h2>Reseñas</h2>
+        
+    </div>
+    <div class="search-container">
+        <input 
+        type="text"
+        placeholder="Buscar">
+        <button class="create-review-button">Crear reseña</button>
+    </div>
+    <div>
+        @for (review of reviewList; track $index) {
+            <div class="review-container">
+                <h3>{{review.title}}</h3>
+                <span>{{review.restaurant.restuarantName}}</span>
+                <div class="parent">
+                    <div class="image-carrousel-grid">
+                        <div>
+                            @if (review.images.length > 0) {
+                                <div>
+                                    <app-carousel [carouselImages]="review.images"></app-carousel>
+                                </div>
+                            }@else{
+                                <div class="carousel-container skeleton">
+                                    <div class="carousel-image-placeholder"></div>
+                                    <div class="carousel-dot-container">
+                                        @for (dot of dots; track $index) {
+                                            <span class="dot skeleton-dot"></span>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="review-details-grid">
+                        <div style="display: flex; gap: 20px;">
+                            <div class="rating">
+                                <span>Lugar: </span>
+                                <div class="star-rating">
+                                    <ng-container *ngFor="let star of getStars(review.place)">
+                                        <span [ngClass]="{ 'filled': star }">★</span>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span>Comida: </span>
+                                <div class="star-rating">
+                                    <ng-container *ngFor="let star of getStars(review.food)">
+                                        <span [ngClass]="{ 'filled': star }">★</span>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <div class="rating">
+                                <span>Música: </span>
+                                <div class="star-rating">
+                                    <ng-container *ngFor="let star of getStars(review.music)">
+                                        <span [ngClass]="{ 'filled': star }">★</span>
+                                    </ng-container>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span>Bebidas: </span>
+                                <div class="star-rating">
+                                    <ng-container *ngFor="let star of getStars(review.drinks)">
+                                        <span [ngClass]="{ 'filled': star }">★</span>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="see-more-button-grid">
+                        <button class="create-review-button" style="width: 50%;">Ver detalle</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
