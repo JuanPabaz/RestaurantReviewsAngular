@@ -1,7 +1,9 @@
 import { ImageResponse } from "./image-response";
+import { RestaurantResponse } from "./restaurant-response";
 
 export interface ReviewResponse {
     idReview: number;
+    title: string;
     place: number;
     food: number;
     service: number;
@@ -12,7 +14,7 @@ export interface ReviewResponse {
     ambient: number;
     totalScore: number;
     comments: string;
-    idRestaurant: number;
+    restaurant: RestaurantResponse;
     idUser: number;
     images: ImageResponse[];
 }
