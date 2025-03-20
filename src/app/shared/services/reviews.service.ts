@@ -28,4 +28,8 @@ export class ReviewsService {
   getAllRestaurants(page: number):Observable<Pageable<ReviewResponse[]>>{
     return this.http.get<Pageable<ReviewResponse[]>>(`${this.baseUrl}?page=${page}`);
   }
+
+  filterReviews(page: number, restaurantName: string):Observable<Pageable<ReviewResponse[]>>{
+    return this.http.get<Pageable<ReviewResponse[]>>(`${this.baseUrl}/filter-review?page=${page}&title=${restaurantName}`)
+  }
 }
