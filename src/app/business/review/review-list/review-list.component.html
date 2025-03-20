@@ -38,17 +38,17 @@
                             <div class="rating">
                                 <span>Lugar: </span>
                                 <div class="star-rating">
-                                    <ng-container *ngFor="let star of getStars(review.place)">
+                                    @for (star of getStars(review.place); track $index) {
                                         <span [ngClass]="{ 'filled': star }">★</span>
-                                    </ng-container>
+                                    }
                                 </div>
                             </div>
                             <div class="rating">
                                 <span>Comida: </span>
                                 <div class="star-rating">
-                                    <ng-container *ngFor="let star of getStars(review.food)">
+                                    @for (star of getStars(review.food); track $index) {
                                         <span [ngClass]="{ 'filled': star }">★</span>
-                                    </ng-container>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -56,17 +56,17 @@
                             <div class="rating">
                                 <span>Música: </span>
                                 <div class="star-rating">
-                                    <ng-container *ngFor="let star of getStars(review.music)">
+                                    @for (star of getStars(review.music); track $index) {
                                         <span [ngClass]="{ 'filled': star }">★</span>
-                                    </ng-container>
+                                    }
                                 </div>
                             </div>
                             <div class="rating">
                                 <span>Bebidas: </span>
                                 <div class="star-rating">
-                                    <ng-container *ngFor="let star of getStars(review.drinks)">
+                                    @for (star of getStars(review.drinks); track $index) {
                                         <span [ngClass]="{ 'filled': star }">★</span>
-                                    </ng-container>
+                                    }
                                 </div>
                             </div>
                         </div>
