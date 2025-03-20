@@ -1,12 +1,16 @@
 <div class="container">
     <div>
         <h2>Reseñas</h2>
-        
     </div>
     <div class="search-container">
-        <input 
-        type="text"
-        placeholder="Buscar">
+        <div style="display: flex; width: 90%;">
+            <input 
+            type="text"
+            placeholder="Buscar"
+            [(ngModel)]="searchItem"
+            (keyup.enter)="filterReview()">
+            <button class="create-review-button" (click)="filterReview()">Buscar</button>
+        </div>
         <button class="create-review-button">Crear reseña</button>
     </div>
     <div>
@@ -69,6 +73,9 @@
                                     }
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <p>{{review.comments}}</p>
                         </div>
                     </div>
                     <div class="see-more-button-grid">
