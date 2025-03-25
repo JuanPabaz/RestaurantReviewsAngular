@@ -9,7 +9,7 @@
       </nav>
       <div class="navbar-auth">
         @if (user.isAuth) {
-            <a class="login-button" (click)="logoutHandler()">Cerrar sesión</a>
+            <button (click)="logoutHandler()" class="login-button">Logout</button>
         }@else {
             <button (click)="loginHandler()" class="login-button">Login</button>
             <button (click)="registerHandler()" class="see-more-button">Signup</button>
