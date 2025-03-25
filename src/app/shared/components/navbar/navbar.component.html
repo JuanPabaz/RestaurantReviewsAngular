@@ -9,10 +9,10 @@
       </nav>
       <div class="navbar-auth">
         @if (user.isAuth) {
-            <a (click)="logoutHandler()">Cerrar sesión</a>
+            <a class="login-button" (click)="logoutHandler()">Cerrar sesión</a>
         }@else {
-            <a routerLink="/login">Iniciar sesión</a>
-            <a routerLink="/register">Registrarse</a>
+            <button (click)="loginHandler()" class="login-button">Login</button>
+            <button (click)="registerHandler()" class="see-more-button">Signup</button>
         }
       </div>
   </div>
