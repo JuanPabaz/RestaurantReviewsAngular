@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthResquest } from '../../interfaces/auth-request';
 import { AuthResponse } from '../../interfaces/auth-response';
+import { RegisterRequest } from '../../interfaces/register-request';
+import { UserResponse } from '../../interfaces/user-response';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,10 @@ export class AuthService {
 
   login(authRequest: AuthResquest):Observable<AuthResponse>{
     return this.http.post<AuthResponse>(`${this.baseUrl}/login`,authRequest);
+  }
+
+  register(registerRequest: RegisterRequest):Observable<UserResponse>{
+    return this.http.post<UserResponse>(`${this.baseUrl}/register`,registerRequest);
   }
 
   set user(user: any){
