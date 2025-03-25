@@ -25,6 +25,18 @@ export default class RegisterComponent {
   }
 
   onSubmit(registerForm: NgForm){
+    this.registerRequest = registerForm.form.value;
+    this.register(this.registerRequest);
+  }
 
+  register(registerRequest: RegisterRequest){
+    this.auth_service.register(registerRequest).subscribe({
+      next: register => {
+        this.router.navigate(['/restaurant-list']);
+      },
+      error: err => {
+        console.log(err.error);
+      }
+    })
   }
 }
