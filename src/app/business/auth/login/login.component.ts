@@ -3,11 +3,11 @@ import { AuthResquest } from '../../../interfaces/auth-request';
 import { AuthService } from '../../../shared/services/auth.service';
 import { AuthResponse } from '../../../interfaces/auth-response';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
