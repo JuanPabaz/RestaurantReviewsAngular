@@ -33,9 +33,10 @@
         (changePageEventEmitter)="changePage($event)"/>
     </div>
 </div>
+
 @if (isNotAuthModal) {
-    <div class="modal-overlay">
-        <div class="modal">
+    <div class="modal-overlay" (click)="closeModal($event)">
+        <div class="modal" (click)="$event.stopPropagation()">
             <span class="close-modal" (click)="isNotAuthModal = false">&times;</span>
             <h3>Para reseñar un restaurante, inicia sesión</h3>
             <button class="create-review-button" (click)="navigateToLogin()">Iniciar sesión</button>

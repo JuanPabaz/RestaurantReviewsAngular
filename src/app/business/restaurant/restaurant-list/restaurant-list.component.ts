@@ -59,6 +59,12 @@ export default class RestaurantListComponent implements OnInit{
     });
   }
 
+  closeModal(event: MouseEvent) {
+    if (event.target === event.currentTarget) {
+      this.isNotAuthModal = false;
+    }
+  }
+
   changePage(page:number){
     this.getAllRestaurants(page);
   }
