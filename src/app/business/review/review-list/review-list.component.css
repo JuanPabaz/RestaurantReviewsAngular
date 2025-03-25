@@ -1,6 +1,6 @@
 .container {
     min-width: 80vw;
-    padding: 10px;
+    padding: 2rem;
     border-radius: 0.375rem;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -41,8 +41,10 @@ input {
 
 .review-container{
     padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px; 
     border-radius: 0.375rem;
-    background-color: white;
+    background-color: #f7fafc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
