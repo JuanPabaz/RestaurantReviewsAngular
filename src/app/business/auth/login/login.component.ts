@@ -23,7 +23,6 @@ export default class LoginComponent {
   login(authRequest: AuthResquest){
     this.auth_service.login(authRequest).subscribe({
       next: authResponse => {
-        debugger
         this.authResponse = authResponse;
         console.log(this.authResponse);
         const token = authResponse.accessToken;
