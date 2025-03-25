@@ -23,4 +23,12 @@ export class NavbarComponent {
     this.auth_service.logOut();
     this.router.navigate(['/restaurant-list'])
   }
+
+  loginHandler(){
+    this.router.navigate(['/login']);
+  }
+
+  registerHandler(){
+    this.router.navigate(['/register']);
+  }
 }
