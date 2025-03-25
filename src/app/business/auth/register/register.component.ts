@@ -32,7 +32,7 @@ export default class RegisterComponent {
   register(registerRequest: RegisterRequest){
     this.auth_service.register(registerRequest).subscribe({
       next: register => {
-        this.router.navigate(['/restaurant-list']);
+        this.router.navigate(['/login']);
       },
       error: err => {
         console.log(err.error);
