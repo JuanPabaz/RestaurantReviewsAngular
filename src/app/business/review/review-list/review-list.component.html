@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <h2>Reseñas</h2>
+        <h2 style="margin-top: 0;">Reseñas</h2>
     </div>
     <div class="search-container">
         <div style="display: flex; width: 90%;">
@@ -16,7 +16,7 @@
     <div>
         @for (review of reviewList; track $index) {
             <div class="review-container">
-                <h3>{{review.title}}</h3>
+                <h3 style="margin-top: 0;">{{review.title}}</h3>
                 <span>{{review.restaurant.restuarantName}}</span>
                 <div class="parent">
                     <div class="image-carrousel-grid">
