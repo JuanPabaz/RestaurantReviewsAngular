@@ -1,5 +1,5 @@
 .container{
-    padding: 10px;
+    padding: 2rem;
     border-radius: 0.375rem;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -12,38 +12,14 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-@media (max-width: 600px) {
-    .restaurant-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    
-}
-
-@media (min-width: 601px) {
-    .restaurant-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .restaurant-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 .restaurant-card {
     grid-row: span 1;
     min-width: 30%;
-    border-radius: 0.375rem; /* rounded-md */
+    border: 1px solid #e2e8f0;
+    border-radius: 10px; /* rounded-md */
     padding: 1rem; /* p-4 */
-    background-color: white;
+    background-color: #f7fafc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
-}
-
-@media (min-width: 768px) { /* md */
-    .restaurant-card {
-        grid-row: span 2;
-    }
 }
 
 .restaurant-name {
@@ -179,5 +155,43 @@
     color: #007bff;
     cursor: pointer;
     text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+
+@media (min-width: 601px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+
+@media (min-width: 601px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
