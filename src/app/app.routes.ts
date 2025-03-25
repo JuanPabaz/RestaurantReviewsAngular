@@ -10,6 +10,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./business/auth/login/login.component')
             },
             {
+                path:'register',
+                loadComponent: () => import('./business/auth/register/register.component')
+            },
+            {
                 path:'restaurant-list',
                 loadComponent: () => import('./business/restaurant/restaurant-list/restaurant-list.component')
             },
