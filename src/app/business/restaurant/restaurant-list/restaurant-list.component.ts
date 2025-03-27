@@ -6,6 +6,7 @@ import { Pageable } from '../../../interfaces/pageable';
 import { PageableComponent } from '../../../shared/components/pageable/pageable.component';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
+import { CategoryResponse } from '../../../interfaces/category-response';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -17,12 +18,19 @@ export default class RestaurantListComponent implements OnInit{
   restaurantList: RestaurantResponse[] = [];
   restaurantListPageable!: Pageable<RestaurantResponse[]>;
   isNotAuthModal = false;
+  category: CategoryResponse = {
+        idCategory: 0,
+        category: '',
+        description: '',
+        idImage: 0
+  }
   emptyRestaurant: RestaurantResponse = {
     idRestaurant: 0,
     restuarantName: '',
     address: '',
     phoneNumber: '',
-    idCategory: 0,
+    category: this.category,
+    avgPrice: 0,
     pageLink: '',
     images: [],
   }

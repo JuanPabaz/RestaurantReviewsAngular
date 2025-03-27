@@ -1,3 +1,4 @@
+import { CategoryResponse } from "./category-response";
 import { ImageResponse } from "./image-response";
 
 export interface RestaurantResponse {
@@ -5,7 +6,8 @@ export interface RestaurantResponse {
     restuarantName: string;
     address: string;
     phoneNumber: string;
-    idCategory: number;
+    category: CategoryResponse;
     pageLink: string;
+    avgPrice: number;
     images: ImageResponse[];
 }

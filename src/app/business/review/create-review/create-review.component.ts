@@ -5,6 +5,7 @@ import { ReviewRequest } from '../../../interfaces/review-request';
 import { CommonModule } from '@angular/common';
 import { RestaurantResponse } from '../../../interfaces/restaurant-response';
 import { Router } from '@angular/router';
+import { CategoryResponse } from '../../../interfaces/category-response';
 
 @Component({
   selector: 'app-create-review',
@@ -17,12 +18,19 @@ export default class CreateReviewComponent {
   stars = [1, 2, 3, 4, 5];
   imagePreviews: string[] = [];
   selectedFiles: File[] = [];
+  category: CategoryResponse = {
+      idCategory: 0,
+      category: '',
+      description: '',
+      idImage: 0
+  }
   selectedRestaurant: RestaurantResponse = {
     idRestaurant: 0,
     restuarantName: '',
     address: '',
     phoneNumber: '',
-    idCategory: 0,
+    category: this.category,
+    avgPrice: 0,
     pageLink: '',
     images: [],
   };
