@@ -1,22 +1,27 @@
-.carousel-container{
+.carousel-container {
     position: relative;
     margin: auto;
     text-align: center;
     width: 100%;
+    height: 100%; /* Esto hará que tome la mitad del contenedor padre */
     border: 2px solid #cbd5e0;
     border-radius: 10px;
     box-shadow: 0 6px 12px #dce1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.carousel-container img{
+.carousel-container img {
     display: none;
     border-radius: 0.375rem;
+    width: 100%;
+    height: 100%; /* Esto hará que las imágenes llenen el contenedor */
+    object-fit: cover; /* Esto asegurará que la imagen cubra el espacio sin deformarse */
 }
 
-.carousel-container img.image-active{
+.carousel-container img.image-active {
     display: block;
-    width: 100%;
-    height: 200px;
 }
 
 .carousel-dot-container{
