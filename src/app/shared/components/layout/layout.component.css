@@ -11,16 +11,10 @@
 
 /* Main */
 .main {
-    margin-top: 4rem; /* mt-16 */
+    margin-top: 5rem; /* mt-16 */
     padding: 1rem 5rem; /* px-20 py-4 */
     display: flex;
     justify-content: center;
-}
-
-@media (min-width: 768px) { /* md */
-    .main {
-        margin-top: 3.75rem; /* md:mt-15 */
-    }
 }
 
 @media (max-width: 767px) { /* md */
