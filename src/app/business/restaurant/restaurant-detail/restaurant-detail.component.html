@@ -13,8 +13,8 @@
                     <span class="reviews">(120 reviews)</span>
                 </div>
                 <div class="info">
-                    <p><strong>Cuisine:</strong> {{selectedRestaurant.category.category}}</p>
-                    <p><strong>Price:</strong> <span class="price-range">$ {{selectedRestaurant.avgPrice | currency : "COP" : "symbol-narrow" : "1.0-0"}}</span></p>
+                    <p><strong>Categoria:</strong> {{selectedRestaurant.category.category}}</p>
+                    <p><strong>Precio promedio:</strong> <span class="price-range"> {{selectedRestaurant.avgPrice | currency : "COP" : "symbol-narrow" : "1.0-0"}}</span></p>
                 </div>
                 <div class="actions">
                     <button class="btn review-btn">Reseñar</button>
@@ -36,14 +36,14 @@
                 <p><strong>Website:</strong> <a href="http://example.com" target="_blank"> {{selectedRestaurant.pageLink}}</a></p>
             </div>
             <div class="hours">
-                <h3>Hours</h3>
+                <h3>Horarios</h3>
                 <p><strong>Monday:</strong> 9:00 AM - 9:00 PM</p>
                 <p><strong>Tuesday:</strong> 9:00 AM - 9:00 PM</p>
             </div>
         </div>
 
         <div class="features">
-            <h3>Features & Amenities</h3>
+            <h3>Caraterísticas y comodidades</h3>
             <div class="feature-list">
                 <span class="feature">Free WiFi</span>
                 <span class="feature">Outdoor Seating</span>
