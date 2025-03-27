@@ -1,18 +1,54 @@
 <div class="container">
-    <div>
-        <h1>{{selectedRestaurant.restuarantName}}</h1>
-        <div style="height: 400px;">
-            <app-carousel [carouselImages]="selectedRestaurant.images" style="flex: 1;"></app-carousel>
+    <div class="card">
+        <div style="height: 250px;">
+            <app-carousel [carouselImages]="selectedRestaurant.images"></app-carousel>
         </div>
-        <div style="margin-top: 10px;">
-            <label>Dirección</label>
-            <p>{{selectedRestaurant.address}}</p>
-            <label>Página web</label>
-            <p>{{selectedRestaurant.pageLink}}</p>
-            <label>Número telefónico</label>
-            <p>{{selectedRestaurant.phoneNumber}}</p>
-            <label>Categoría</label>
-            <p>{{selectedRestaurant.idCategory}}</p>
+        
+        <div class="top-section">
+            <div class="details">
+                <h1 class="title">{{selectedRestaurant.restuarantName}}</h1>
+                <div class="rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="score">4.5</span>
+                    <span class="reviews">(120 reviews)</span>
+                </div>
+                <div class="info">
+                    <p><strong>Cuisine:</strong> {{selectedRestaurant.category.category}}</p>
+                    <p><strong>Price:</strong> <span class="price-range">$ {{selectedRestaurant.avgPrice | currency : "COP" : "symbol-narrow" : "1.0-0"}}</span></p>
+                </div>
+                <div class="actions">
+                    <button class="btn review-btn">Reseñar</button>
+                    <button class="btn favorite-btn">Añadir a favoritos</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <h2>Sobre {{selectedRestaurant.restuarantName}}</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae tortor vel ligula suscipit tincidunt.</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="contact">
+                <h3>Contacto y ubicación</h3>
+                <p><strong>Address:</strong> {{selectedRestaurant.address}}</p>
+                <p><strong>Phone:</strong> <a href="tel:1234567890"> {{selectedRestaurant.phoneNumber}}</a></p>
+                <p><strong>Website:</strong> <a href="http://example.com" target="_blank"> {{selectedRestaurant.pageLink}}</a></p>
+            </div>
+            <div class="hours">
+                <h3>Hours</h3>
+                <p><strong>Monday:</strong> 9:00 AM - 9:00 PM</p>
+                <p><strong>Tuesday:</strong> 9:00 AM - 9:00 PM</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>Features & Amenities</h3>
+            <div class="feature-list">
+                <span class="feature">Free WiFi</span>
+                <span class="feature">Outdoor Seating</span>
+                <span class="feature">Pet Friendly</span>
+            </div>
         </div>
     </div>
 </div>
