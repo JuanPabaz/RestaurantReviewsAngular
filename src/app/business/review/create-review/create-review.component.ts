@@ -28,6 +28,7 @@ export default class CreateReviewComponent {
     idRestaurant: 0,
     restuarantName: '',
     address: '',
+    restuarantDescription: '',
     phoneNumber: '',
     category: this.category,
     avgPrice: 0,
