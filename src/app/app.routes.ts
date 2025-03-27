@@ -18,6 +18,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./business/restaurant/restaurant-list/restaurant-list.component')
             },
             {
+                path:'restaurant-detail',
+                loadComponent: () => import('./business/restaurant/restaurant-detail/restaurant-detail.component')
+            },
+            {
                 path:'review-list',
                 loadComponent: () => import('./business/review/review-list/review-list.component')
             },
