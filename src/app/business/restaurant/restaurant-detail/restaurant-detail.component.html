@@ -1,1 +1,18 @@
-<p>restaurant-detail works!</p>
+<div class="container">
+    <div>
+        <h1>{{selectedRestaurant.restuarantName}}</h1>
+        <div style="height: 400px;">
+            <app-carousel [carouselImages]="selectedRestaurant.images" style="flex: 1;"></app-carousel>
+        </div>
+        <div style="margin-top: 10px;">
+            <label>Dirección</label>
+            <p>{{selectedRestaurant.address}}</p>
+            <label>Página web</label>
+            <p>{{selectedRestaurant.pageLink}}</p>
+            <label>Número telefónico</label>
+            <p>{{selectedRestaurant.phoneNumber}}</p>
+            <label>Categoría</label>
+            <p>{{selectedRestaurant.idCategory}}</p>
+        </div>
+    </div>
+</div>
