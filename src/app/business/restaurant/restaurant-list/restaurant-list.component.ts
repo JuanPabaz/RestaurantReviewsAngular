@@ -77,6 +77,10 @@ export default class RestaurantListComponent implements OnInit{
     }
   }
 
+  seeMoreRestaurant(restaurant: RestaurantResponse){
+    this.router.navigate(['/restaurant-detail'],{state:{restaurant}})
+  }
+
   navigateToLogin() {
     this.isNotAuthModal = false;
     this.router.navigate(['/login']);
