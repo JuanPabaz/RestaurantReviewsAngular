@@ -30,6 +30,7 @@ export default class RestaurantListComponent implements OnInit{
     address: '',
     restuarantDescription: '',
     avgRating: 0,
+    reviewCount: 0,
     phoneNumber: '',
     category: this.category,
     avgPrice: 0,

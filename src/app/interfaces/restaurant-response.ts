@@ -8,6 +8,7 @@ export interface RestaurantResponse {
     phoneNumber: string;
     restuarantDescription: string;
     avgRating: number;
+    reviewCount: number;
     category: CategoryResponse;
     pageLink: string;
     avgPrice: number;
