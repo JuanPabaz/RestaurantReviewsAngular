@@ -7,6 +7,7 @@ export interface RestaurantResponse {
     address: string;
     phoneNumber: string;
     restuarantDescription: string;
+    avgRating: number;
     category: CategoryResponse;
     pageLink: string;
     avgPrice: number;

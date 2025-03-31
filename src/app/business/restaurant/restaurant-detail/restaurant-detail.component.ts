@@ -23,6 +23,7 @@ export default class RestaurantDetailComponent {
     restuarantName: '',
     address: '',
     restuarantDescription: '',
+    avgRating: 0,
     phoneNumber: '',
     category: this.category,
     avgPrice: 0,
