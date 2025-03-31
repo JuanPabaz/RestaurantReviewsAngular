@@ -8,7 +8,7 @@
             <div class="details">
                 <h1 class="title">{{selectedRestaurant.restuarantName}}</h1>
                 <div class="rating">
-                    <span class="stars">★★★★☆</span>
+                    <app-rating-stars [score]="selectedRestaurant.avgRating"></app-rating-stars>
                     <span class="score">{{selectedRestaurant.avgRating}}</span>
                     <span class="reviews">({{selectedRestaurant.reviewCount}})</span>
                 </div>
