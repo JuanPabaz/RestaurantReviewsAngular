@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 import { CategoryResponse } from '../../../interfaces/category-response';
 import { CommonModule } from '@angular/common';
+import { RatingStarsComponent } from '../../../shared/components/rating-stars/rating-stars.component';
 
 @Component({
   selector: 'app-restaurant-detail',
-  imports: [CarouselComponent, CommonModule],
+  imports: [CarouselComponent, CommonModule, RatingStarsComponent],
   templateUrl: './restaurant-detail.component.html',
   styleUrl: './restaurant-detail.component.css'
 })
