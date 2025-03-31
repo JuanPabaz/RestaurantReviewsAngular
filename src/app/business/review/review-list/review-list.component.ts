@@ -5,10 +5,11 @@ import { Pageable } from '../../../interfaces/pageable';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RatingStarsComponent } from '../../../shared/components/rating-stars/rating-stars.component';
 
 @Component({
   selector: 'app-review-list',
-  imports: [CarouselComponent, CommonModule, FormsModule],
+  imports: [CarouselComponent, CommonModule, FormsModule, RatingStarsComponent],
   templateUrl: './review-list.component.html',
   styleUrl: './review-list.component.css'
 })

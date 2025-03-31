@@ -41,37 +41,21 @@
                         <div style="display: flex; gap: 20px;">
                             <div class="rating">
                                 <span>Lugar: </span>
-                                <div class="star-rating">
-                                    @for (star of getStars(review.place); track $index) {
-                                        <span [ngClass]="{ 'filled': star }">★</span>
-                                    }
-                                </div>
+                                <app-rating-stars [score]="review.place"></app-rating-stars>
                             </div>
                             <div class="rating">
                                 <span>Comida: </span>
-                                <div class="star-rating">
-                                    @for (star of getStars(review.food); track $index) {
-                                        <span [ngClass]="{ 'filled': star }">★</span>
-                                    }
-                                </div>
+                                <app-rating-stars [score]="review.food"></app-rating-stars>
                             </div>
                         </div>
                         <div style="display: flex; gap: 20px;">
                             <div class="rating">
                                 <span>Música: </span>
-                                <div class="star-rating">
-                                    @for (star of getStars(review.music); track $index) {
-                                        <span [ngClass]="{ 'filled': star }">★</span>
-                                    }
-                                </div>
+                                <app-rating-stars [score]="review.music"></app-rating-stars>
                             </div>
                             <div class="rating">
                                 <span>Bebidas: </span>
-                                <div class="star-rating">
-                                    @for (star of getStars(review.drinks); track $index) {
-                                        <span [ngClass]="{ 'filled': star }">★</span>
-                                    }
-                                </div>
+                                <app-rating-stars [score]="review.drinks"></app-rating-stars>
                             </div>
                         </div>
                         <div>
