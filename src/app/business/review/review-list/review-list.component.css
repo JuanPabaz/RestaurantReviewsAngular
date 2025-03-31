@@ -120,19 +120,5 @@ input {
     margin-bottom: 10px;
 }
 
-.star-rating {
-    display: inline-flex;
-    gap: 2px;
-}
-
-.star-rating span {
-    font-size: 24px;
-    color: gray;
-}
-
-.star-rating .filled {
-    color: gold;
-}
-
 
         
