@@ -9,8 +9,8 @@
                 <h1 class="title">{{selectedRestaurant.restuarantName}}</h1>
                 <div class="rating">
                     <span class="stars">★★★★☆</span>
-                    <span class="score">4.5</span>
-                    <span class="reviews">(120 reviews)</span>
+                    <span class="score">{{selectedRestaurant.avgRating}}</span>
+                    <span class="reviews">({{selectedRestaurant.reviewCount}})</span>
                 </div>
                 <div class="info">
                     <p><strong>Categoria:</strong> {{selectedRestaurant.category.category}}</p>
