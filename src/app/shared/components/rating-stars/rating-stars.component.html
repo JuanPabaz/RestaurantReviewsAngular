@@ -1,0 +1,5 @@
+<div class="star-rating">
+    @for (star of getStars(); track $index) {
+        <span [ngClass]="{ 'filled': star }">★</span>
+    }
+</div>
