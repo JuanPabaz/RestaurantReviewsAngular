@@ -60,7 +60,7 @@ body {
 /* Rating */
 .rating {
     display: flex;
-    align-items: center;
+    align-items:baseline;
     gap: 5px;
     color: #666;
 }
