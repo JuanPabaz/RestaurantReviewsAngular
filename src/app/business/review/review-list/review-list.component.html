@@ -69,5 +69,9 @@
             </div>
         }
     </div>
+    <div style="margin-top: 10px;">
+        <app-pageable [page]="reviewPageable"
+        (changePageEventEmitter)="changePage($event)"/>
+    </div>
 </div>
 

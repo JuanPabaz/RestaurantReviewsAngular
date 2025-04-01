@@ -6,10 +6,12 @@ import { CarouselComponent } from '../../../shared/components/carousel/carousel.
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RatingStarsComponent } from '../../../shared/components/rating-stars/rating-stars.component';
+import { PageableComponent } from '../../../shared/components/pageable/pageable.component';
 
 @Component({
   selector: 'app-review-list',
-  imports: [CarouselComponent, CommonModule, FormsModule, RatingStarsComponent],
+  imports: [CarouselComponent, CommonModule, FormsModule, 
+    RatingStarsComponent, PageableComponent],
   templateUrl: './review-list.component.html',
   styleUrl: './review-list.component.css'
 })
@@ -59,6 +61,10 @@ export default class ReviewListComponent implements OnInit{
   getStars(score: number): boolean[] {
     const roundedScore = Math.round(score); 
     return Array(5).fill(false).map((_, i) => i < roundedScore);
+  }
+
+  changePage(page:number){
+    this.getAllReviews(page);
   }
 
 
