@@ -5,6 +5,7 @@ import { CarouselComponent } from '../../../shared/components/carousel/carousel.
 import { CategoryResponse } from '../../../interfaces/category-response';
 import { CommonModule } from '@angular/common';
 import { RatingStarsComponent } from '../../../shared/components/rating-stars/rating-stars.component';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -13,6 +14,7 @@ import { RatingStarsComponent } from '../../../shared/components/rating-stars/ra
   styleUrl: './restaurant-detail.component.css'
 })
 export default class RestaurantDetailComponent {
+  isNotAuthModal = false;
   category: CategoryResponse = {
     idCategory: 0,
     category: '',
@@ -33,9 +35,39 @@ export default class RestaurantDetailComponent {
     images: [],
   };
 
-  constructor(private router: Router){
+  constructor(private router: Router,
+    private auth_service: AuthService,
+  ){
     if (router.getCurrentNavigation()?.extras.state){
       this.selectedRestaurant = router.getCurrentNavigation()?.extras.state!['restaurant'];
     }
+  }
+
+  get user(){
+    return this.auth_service.user;
+  }
+
+  validateCreateReview(restaurant: RestaurantResponse){
+    if (this.user.isAuth){
+      this.router.navigate(['/create-review'],{state:{restaurant}})
+    }else{
+      this.isNotAuthModal = true;
+    }
+  }
+
+  closeModal(event: MouseEvent) {
+    if (event.target === event.currentTarget) {
+      this.isNotAuthModal = false;
+    }
+  }
+
+  navigateToLogin() {
+    this.isNotAuthModal = false;
+    this.router.navigate(['/login']);
+  }
+
+  navigateToSignup() {
+    this.isNotAuthModal = false;
+    this.router.navigate(['/signup']);
   }
 }

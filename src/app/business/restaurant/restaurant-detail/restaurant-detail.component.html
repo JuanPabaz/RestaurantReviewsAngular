@@ -17,8 +17,8 @@
                     <p><strong>Precio promedio:</strong> <span class="price-range"> {{selectedRestaurant.avgPrice | currency : "COP" : "symbol-narrow" : "1.0-0"}}</span></p>
                 </div>
                 <div class="actions">
-                    <button class="btn review-btn">Reseñar</button>
-                    <button class="btn favorite-btn">Añadir a favoritos</button>
+                    <button class="create-review-button" (click)="validateCreateReview(selectedRestaurant)">Reseñar</button>
+                    <button class="see-more-button">Añadir a favoritos</button>
                 </div>
             </div>
         </div>
@@ -52,3 +52,16 @@
         </div>
     </div>
 </div>
+
+@if (isNotAuthModal) {
+    <div class="modal-overlay" (click)="closeModal($event)">
+        <div class="modal" (click)="$event.stopPropagation()">
+            <span class="close-modal" (click)="isNotAuthModal = false">&times;</span>
+            <h3>Para reseñar un restaurante, inicia sesión</h3>
+            <button class="create-review-button" (click)="navigateToLogin()">Iniciar sesión</button>
+            <div class="signup-link">
+                ¿No tienes cuenta? <a (click)="navigateToSignup()">Registrate</a>
+            </div>
+        </div>
+    </div>
+}
