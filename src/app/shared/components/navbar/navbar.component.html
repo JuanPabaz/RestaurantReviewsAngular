@@ -1,30 +1,31 @@
 <div class="navbar-container">
-  <!-- Desktop Navigation -->
-  <div class="navbar-desktop">
-      <div class="navbar-logo">RR</div>
-      <nav class="navbar-menu">
-          <a href="#">Inicio</a>
-          <a [routerLink]="['/review-list']">Reseñas</a>
-          <a [routerLink]="['/restaurant-list']">Restaurantes</a>
-      </nav>
-      <div class="navbar-auth">
-        @if (user.isAuth) {
-            <button class="login-button">Perfil</button>
-            <button (click)="logoutHandler()" class="see-more-button">Logout</button>
-        }@else {
-            <button (click)="registerHandler()" class="see-more-button">Signup</button>
-            <button (click)="loginHandler()" class="login-button">Login</button>
-        }
-      </div>
+    <!-- Desktop Navigation -->
+    <div class="navbar-desktop">
+        <div class="navbar-logo">RR</div>
+        <nav class="navbar-menu">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+            <a routerLink="/review-list" routerLinkActive="active">Reseñas</a>
+            <a routerLink="/restaurant-list" routerLinkActive="active">Restaurantes</a>
+        </nav>
+        <div class="navbar-auth">
+          @if (user.isAuth) {
+              <button class="login-button">Perfil</button>
+              <button (click)="logoutHandler()" class="see-more-button">Logout</button>
+          }@else {
+              <button (click)="registerHandler()" class="see-more-button">Signup</button>
+              <button (click)="loginHandler()" class="login-button">Login</button>
+          }
+        </div>
+    </div>
+  
+    <!-- Mobile Navigation -->
+    <div class="navbar-mobile">
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+        <div class="navbar-logo">RR</div>
+    </div>
   </div>
-
-  <!-- Mobile Navigation -->
-  <div class="navbar-mobile">
-      <button>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-      </button>
-      <div class="navbar-logo">RR</div>
-  </div>
-</div>
+  
