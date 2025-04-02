@@ -44,11 +44,15 @@
 
         <div class="features">
             <h3>Caraterísticas y comodidades</h3>
-            <div class="feature-list">
-                <span class="feature">Free WiFi</span>
-                <span class="feature">Outdoor Seating</span>
-                <span class="feature">Pet Friendly</span>
-            </div>
+            @if (selectedRestaurant.restaurantFeatures.length === 0) {
+                Proximamente...
+            }@else {
+                <div class="feature-list">
+                    @for (feature of selectedRestaurant.restaurantFeatures; track $index) {
+                        <span class="feature">{{feature}}</span>
+                    }
+                </div>
+            }
         </div>
     </div>
 </div>
