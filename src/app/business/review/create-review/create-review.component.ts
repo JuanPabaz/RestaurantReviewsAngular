@@ -36,6 +36,7 @@ export default class CreateReviewComponent {
     avgPrice: 0,
     pageLink: '',
     images: [],
+    restaurantFeatures: []
   };
   reviewRequest: ReviewRequest = {
     place: -1,

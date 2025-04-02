@@ -13,4 +13,5 @@ export interface RestaurantResponse {
     pageLink: string;
     avgPrice: number;
     images: ImageResponse[];
+    restaurantFeatures: string[];
 }

@@ -33,6 +33,7 @@ export default class RestaurantDetailComponent {
     avgPrice: 0,
     pageLink: '',
     images: [],
+    restaurantFeatures: []
   };
 
   constructor(private router: Router,

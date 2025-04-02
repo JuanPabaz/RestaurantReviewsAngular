@@ -36,6 +36,7 @@ export default class RestaurantListComponent implements OnInit{
     avgPrice: 0,
     pageLink: '',
     images: [],
+    restaurantFeatures: [],
   }
 
   constructor(private _restaurant_service: RestaurantService,
