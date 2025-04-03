@@ -6,6 +6,7 @@ import { CategoryResponse } from '../../../interfaces/category-response';
 import { CommonModule } from '@angular/common';
 import { RatingStarsComponent } from '../../../shared/components/rating-stars/rating-stars.component';
 import { AuthService } from '../../../shared/services/auth.service';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -38,6 +39,7 @@ export default class RestaurantDetailComponent {
 
   constructor(private router: Router,
     private auth_service: AuthService,
+    private user_service: UserService
   ){
     if (router.getCurrentNavigation()?.extras.state){
       this.selectedRestaurant = router.getCurrentNavigation()?.extras.state!['restaurant'];
@@ -56,6 +58,24 @@ export default class RestaurantDetailComponent {
     }
   }
 
+  validateAddToFavorites(restaurant: RestaurantResponse){
+    if (this.user.isAuth){
+      this.addToFavorites(restaurant.idRestaurant, this.user.userId);
+    }else{
+      this.isNotAuthModal = true;
+    }
+  }
+
+  addToFavorites(idRestaurant: number, userId: number){
+    this.user_service.addToFavorites(idRestaurant,userId).subscribe({
+      next: data => {
+
+      },
+      error: err => {
+        console.log(err.error);
+      }
+    })
+  }
   closeModal(event: MouseEvent) {
     if (event.target === event.currentTarget) {
       this.isNotAuthModal = false;
