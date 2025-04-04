@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  
 
   constructor(
     private auth_service: AuthService,
@@ -17,6 +18,11 @@ export class NavbarComponent {
 
   get user(){
     return this.auth_service.user;
+  }
+
+  toggleProfileMenu(){
+    const subMenu = document.getElementById("subMenu");
+    subMenu?.classList.toggle("open-menu");
   }
 
   logoutHandler(){
