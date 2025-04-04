@@ -40,6 +40,11 @@ export const routes: Routes = [
                     {
                         path:'personal-information',
                         loadComponent: () => import('./business/profile/personal-information/personal-information.component')
+                    },
+                    {
+                        path: '',
+                        redirectTo: 'personal-information',
+                        pathMatch: 'full'
                     }
                 ]
             },
