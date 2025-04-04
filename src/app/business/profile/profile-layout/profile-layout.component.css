@@ -1,5 +1,4 @@
 .account-management {
-    font-family: Arial, sans-serif;
     min-width: 90vw;
     min-height: 70vh;
     padding: 2rem;
@@ -16,6 +15,7 @@
   .sidebar {
     width: 200px;
     background: #f8f9fa;
+    border: 1px solid #e4e4e4;
     padding: 20px;
     border-radius: 8px;
   }
@@ -39,6 +39,7 @@
     flex-grow: 1;
     padding: 20px;
     background: #f8f9fa;
+    border: 1px solid #e4e4e4;
     border-radius: 8px;
     margin-left: 20px;
   }
