@@ -9,8 +9,32 @@
         </nav>
         <div class="navbar-auth">
           @if (user.isAuth) {
-              <button class="login-button" routerLink="/profile">Perfil</button>
-              <button (click)="logoutHandler()" class="see-more-button">Logout</button>
+              <img src="user.png" alt="" class="user-pic" (click)="toggleProfileMenu()">
+              <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="user.png" alt="">
+                        <h3>Juan Pablo Giraldo</h3>
+                    </div>
+                    <hr>
+                    <a href="" routerLink="/profile" class="sub-menu-link">
+                        <img src="profile.png" alt="">
+                        <p>Cuenta</p>
+                        <span>></span>
+                    </a>
+                    <a class="sub-menu-link">
+                        <img src="help.png" alt="">
+                        <p>Ayuda</p>
+                        <span>></span>
+                    </a>
+                    <a (click)="logoutHandler()" class="sub-menu-link">
+                        <img src="logout.png" alt="">
+                        <p>Cerrar sesión</p>
+                        <span>></span>
+                    </a>
+                    
+                </div>
+              </div>
           }@else {
               <button (click)="registerHandler()" class="see-more-button">Signup</button>
               <button (click)="loginHandler()" class="login-button">Login</button>
