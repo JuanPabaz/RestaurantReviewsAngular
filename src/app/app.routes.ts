@@ -30,6 +30,20 @@ export const routes: Routes = [
                 loadComponent: () => import('./business/review/create-review/create-review.component')
             },
             {
+                path:'profile',
+                loadComponent: () => import('./business/profile/profile-layout/profile-layout.component'),
+                children:[
+                    {
+                        path:'change-password',
+                        loadComponent: () => import('./business/profile/change-password/change-password.component')
+                    },
+                    {
+                        path:'personal-information',
+                        loadComponent: () => import('./business/profile/personal-information/personal-information.component')
+                    }
+                ]
+            },
+            {
                 path: '',
                 redirectTo: 'restaurant-list',
                 pathMatch: 'full'
