@@ -1,0 +1,46 @@
+.account-management {
+    font-family: Arial, sans-serif;
+    min-width: 90vw;
+    min-height: 70vh;
+    padding: 2rem;
+    border-radius: 0.375rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    display: flex;
+    
+  }
+  
+  .sidebar {
+    width: 200px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar .active {
+    background: #dbeafe;
+    border-radius: 5px;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+
+  
