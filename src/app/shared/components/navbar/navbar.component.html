@@ -9,11 +9,11 @@
         </nav>
         <div class="navbar-auth">
           @if (user.isAuth) {
-              <img src="user.png" alt="" class="user-pic" (click)="toggleProfileMenu()">
+              <img [src]="user.image" alt="" class="user-pic" (click)="toggleProfileMenu()">
               <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="user.png" alt="">
+                        <img [src]="user.image" alt="">
                         <h3>Juan Pablo Giraldo</h3>
                     </div>
                     <hr>
