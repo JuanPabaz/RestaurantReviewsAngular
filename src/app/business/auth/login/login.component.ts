@@ -34,7 +34,8 @@ export default class LoginComponent {
           isAuth: true,
           username: user.username,
           role: authResponse.role,
-          userId: payload.userId
+          userId: payload.userId,
+          image: payload.image
         }
         this.auth_service.token = token;
         this.auth_service.refreshToken = refreshToken;

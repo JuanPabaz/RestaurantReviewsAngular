@@ -17,7 +17,8 @@ export class AuthService {
     isAuth: false, 
     username: undefined,
     role: undefined,
-    userId: undefined
+    userId: undefined,
+    image: undefined
   }
 
   constructor(private http: HttpClient) { }
@@ -97,10 +98,12 @@ export class AuthService {
     this._user = {
       isAuth: false,
       username: undefined,
-      role: undefined
+      role: undefined,
+      image: undefined
     };
     sessionStorage.removeItem('user');
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('refreshToken');
+    sessionStorage.removeItem('image');
   }
 }
