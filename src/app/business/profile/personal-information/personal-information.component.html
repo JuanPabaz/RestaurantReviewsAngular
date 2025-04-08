@@ -1,7 +1,7 @@
 <div class="container">
     <div class="profile-card">
         <img src="477.jpg" class="cover-pic">
-        <img [src]="user.image" class="profile-pic">
+        <img [src]="user.image" class="profile-pic" (click)="openImageModal(user.image)">
         <div class="information-container">
             <h1>{{userResponse.fullName}}</h1>
             <p>Desarrollador amante de la comida</p>
@@ -25,5 +25,18 @@
             </div>
         </div>
     </div>
-
 </div>
+@if (changeImageModal) {
+    <div class="modal-backdrop" (click)="closeImageModal()"></div>
+    <div class="image-modal">
+        <div class="modal-header">
+            <h3>Cambiar imagen</h3>
+        </div>
+        <div class="modal-content">
+            <img [src]="selectedImage" class="change-profile-pic">
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" (click)="closeImageModal()">Cancel</button>
+        </div>
+    </div>
+}
