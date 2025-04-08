@@ -100,14 +100,61 @@
 .row h2{
     font-weight: 500;
     font-size: 30px;
+    text-align: center;
 }
 
-.view-btn{
-    display: inline-block;
-    text-decoration: none;
-    background:#ff004f;
-    color: #fff;
-    width: 100%;
-    padding: 15px 0;
-    margin-top: 20px;
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+.image-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+.modal-content {
+    padding: 16px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+  
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.image-modal h3{
+    text-align: center;
+}
+
+.change-profile-pic{
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #fff;
+    transition: box-shadow 0.5s;
 }
