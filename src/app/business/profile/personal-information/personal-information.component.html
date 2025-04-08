@@ -1,6 +1,29 @@
-<div>
-    <div class="user-info">
-        <img [src]="user.image" alt="">
-        <h3>{{userResponse.fullName}}</h3>
+<div class="container">
+    <div class="profile-card">
+        <img src="477.jpg" class="cover-pic">
+        <img [src]="user.image" class="profile-pic">
+        <div class="information-container">
+            <h1>{{userResponse.fullName}}</h1>
+            <p>Desarrollador amante de la comida</p>
+            <div class="btn-container">
+                <button class="create-review-button">Seguir</button>
+                <button class="see-more-button">Mensaje</button>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>Seguidores</p>
+                <h2>100k</h2>
+            </div>
+            <div>
+                <p>Siguiendo</p>
+                <h2>120k</h2>
+            </div>
+            <div>
+                <p>Reseñas</p>
+                <h2>30</h2>
+            </div>
+        </div>
     </div>
+
 </div>
