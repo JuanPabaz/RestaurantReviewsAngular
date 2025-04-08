@@ -10,6 +10,8 @@ import { UserResponse } from '../../../interfaces/user-response';
   styleUrl: './personal-information.component.css'
 })
 export default class PersonalInformationComponent implements OnInit{
+  changeImageModal: boolean = false;
+  selectedImage: string = '';
   userResponse: UserResponse = {
     idUser: 0,
     username: '',
@@ -41,6 +43,16 @@ export default class PersonalInformationComponent implements OnInit{
         console.log(err.error);
       }
     })
+  }
+
+  openImageModal(image: string){
+    this.changeImageModal = !this.changeImageModal;
+    this.selectedImage = image;
+
+  }
+
+  closeImageModal(){
+    this.changeImageModal = false;
   }
 
 }
