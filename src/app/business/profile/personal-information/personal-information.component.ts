@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth.service';
 import { UserService } from '../../../shared/services/user.service';
 import { UserResponse } from '../../../interfaces/user-response';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-personal-information',
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './personal-information.component.html',
   styleUrl: './personal-information.component.css'
 })
 export default class PersonalInformationComponent implements OnInit{
+  faTrash = faTrash;
   changeImageModal: boolean = false;
   selectedImage: string = '';
   userResponse: UserResponse = {
