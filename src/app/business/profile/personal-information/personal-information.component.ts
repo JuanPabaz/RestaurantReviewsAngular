@@ -5,6 +5,7 @@ import { UserResponse } from '../../../interfaces/user-response';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-personal-information',
@@ -15,6 +16,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons'
 export default class PersonalInformationComponent implements OnInit{
   faTrash = faTrash;
   faPen = faPen;
+  faCamera = faCamera;
   changeImageModal: boolean = false;
   selectedImage: string = '';
   userResponse: UserResponse = {

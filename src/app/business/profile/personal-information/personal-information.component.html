@@ -7,6 +7,7 @@
         <div class="profile-image">
             <img [src]="user.image" class="profile-pic">
             <div class="content" (click)="openImageModal(user.image)">
+                <fa-icon [icon]="faCamera"></fa-icon>
             </div>
         </div>
         <div class="information-container">

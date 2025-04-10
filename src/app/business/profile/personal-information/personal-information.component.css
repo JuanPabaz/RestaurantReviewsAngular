@@ -74,6 +74,11 @@
     transition: box-shadow 0.5s, opacity 1s;
 }
 
+.content fa-icon{
+    font-size: 50px;
+    color: #fff;
+}
+
 .content:hover{
     opacity: 1;
 }
