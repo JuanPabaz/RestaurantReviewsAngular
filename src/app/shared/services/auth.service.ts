@@ -18,7 +18,8 @@ export class AuthService {
     username: undefined,
     role: undefined,
     userId: undefined,
-    image: undefined
+    image: undefined,
+    banner: undefined,
   }
 
   constructor(private http: HttpClient) { }
