@@ -1,7 +1,14 @@
 <div class="container">
     <div class="profile-card">
-        <img src="477.jpg" class="cover-pic">
-        <img [src]="user.image" class="profile-pic" (click)="openImageModal(user.image)">
+        <div class="banner-image">
+            <img [src]="user.banner" class="cover-pic">
+            <fa-icon [icon]="faPen" (click)="openImageModal(user.banner)"></fa-icon>
+        </div>
+        <div class="profile-image">
+            <img [src]="user.image" class="profile-pic">
+            <div class="content" (click)="openImageModal(user.image)">
+            </div>
+        </div>
         <div class="information-container">
             <h1>{{userResponse.fullName}}</h1>
             <p>Desarrollador amante de la comida</p>
