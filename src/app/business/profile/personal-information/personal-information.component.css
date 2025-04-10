@@ -138,6 +138,8 @@
     padding: 16px;
     overflow-y: auto;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
   
 .modal-footer {
