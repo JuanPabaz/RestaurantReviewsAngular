@@ -98,6 +98,7 @@
 }
 
 .row h2{
+    margin: 0;
     font-weight: 500;
     font-size: 30px;
     text-align: center;
@@ -143,10 +144,10 @@
 }
   
 .modal-footer {
-    padding: 16px;
+    padding: 16px 16px 0 16px;
     border-top: 1px solid #eaeaea;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 8px;
 }
 
@@ -160,3 +161,17 @@
     box-shadow: 0 0 0 0 #fff;
     transition: box-shadow 0.5s;
 }
+
+input[type="file"]{
+    display: none;
+}
+
+.upload-img-btn{
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    background:#000;
+    text-align: center;
+    padding: 15px;
+}
+
