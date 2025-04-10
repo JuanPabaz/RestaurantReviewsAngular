@@ -30,13 +30,14 @@
     <div class="modal-backdrop" (click)="closeImageModal()"></div>
     <div class="image-modal">
         <div class="modal-header">
-            <h3>Cambiar imagen</h3>
+            <h3 style="margin-top: 0;">Cambiar imagen</h3>
         </div>
         <div class="modal-content">
             <img [src]="selectedImage" class="change-profile-pic">
         </div>
         <div class="modal-footer">
-            <button class="btn-cancel" (click)="closeImageModal()">Cancel</button>
+            <input type="file" id="imageInput" class="d-none" multiple/>
+            <fa-icon [icon]="faTrash" (click)="closeImageModal()"></fa-icon>
         </div>
     </div>
 }
