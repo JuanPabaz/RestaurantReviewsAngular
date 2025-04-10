@@ -36,7 +36,8 @@
             <img [src]="selectedImage" class="change-profile-pic">
         </div>
         <div class="modal-footer">
-            <input type="file" id="imageInput" class="d-none" multiple/>
+            <input type="file" id="imageInput" multiple/>
+            <label for="imageInput" class="upload-img-btn">Subir imagen</label>
             <fa-icon [icon]="faTrash" (click)="closeImageModal()"></fa-icon>
         </div>
     </div>
